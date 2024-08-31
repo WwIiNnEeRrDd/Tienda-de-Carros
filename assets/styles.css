@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    grid-area: navegacion;
+    background-color: rgb(92, 92, 95);
+}
+
+.buscar{
+    grid-area: buscar;
+    background-color: rgb(128, 23, 23);
+}
+
+main{
+    grid-area: principal;
+    background-color: rgb(92, 92, 95);
+}
+
+footer{
+    grid-area: footer;
+    background-color: rgb(128, 23, 23);
+}
+
+.main-container{
+    display: grid;
+    grid-template-rows: 1fr 1fr 12fr 1fr;
+    grid-template-areas: 
+        'navegacion'
+        'buscar'
+        'principal'
+        'footer'
+    ;
+    height: 100vh;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.nav aside{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3%;
+}
+
+.nav aside h1{
+    font-size: 23px;
+}
+
+.nav i{
+    display: flex;
+    align-items: center;
+    padding: 3%;
+}
+
+.nav .menu-version-desktop{
+    display: none;
+}
+
+.busqueda{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2%;
+    color: white;
+}
+
+.busqueda h2{
+    margin-bottom: 2%;
+    font-size: 23px;
+}
+
+.busqueda select{
+    width: 80%;
+    padding: 1%;
+    font-size: 23px;
+}
+
+.seccion-productos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 8%;
+    background-color: white;
+    border: 2px solid rgb(92, 92, 95);
+    text-align: center;
+}
+
+.card img{
+    width: 80%;
+    object-fit: cover;
+    margin-bottom: 2%;
+}
+
+.card h3{
+    margin-bottom: 2%;
+    font-size: 23px;
+}
+
+.card button{
+    background-color: darkblue;
+    width: 30%;
+    padding: 2%;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 3%;
+}
+
+.seccion-scroll{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-bottom: 8%;
+}
+
+.seccion-scroll li{
+    background-color: rgb(128, 23, 23);
+    padding: 2%;
+    border: 1px solid #000;
+}
+
+footer{
+    text-align: center;
+    color: white;
+    padding: 2%;
+}
+
+footer i{
+    color: white;
+    padding: 0.5%;
+}
+
+footer h2{
+    padding: 2%;
+}
+
+@media (min-width: 576px){
+    
+    .main-container{
+        display: grid;
+        grid-template-columns: 2fr 8fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            'navegacion buscar'
+            'navegacion principal'
+            'footer principal'
+        ;
+        height: 100vh;
+    }
+
+    .card{
+        width: 23%;
+        margin: 0;
+    }
+    
+    nav{
+        background-color: #000;
+    }
+
+    .nav{
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    
+    .nav aside{
+        width: 100%;
+        padding: 0;
+        margin-bottom: 5%;
+    }
+
+    .nav .dropdown{
+        display: none;
+    }
+
+    .nav .menu-version-desktop{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav .menu-version-desktop a{
+        margin-bottom: 5%;
+        text-decoration: none;
+        color: white;
+    }
+}
